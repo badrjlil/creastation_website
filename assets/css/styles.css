@@ -1,0 +1,596 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #161e22;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/*=============== HEADER ===============*/
+header {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #161e22;
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.nav_logo {
+  padding-left: 30px;
+}
+
+.nav_logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  display: flex;
+  padding: 0 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: 0.6s;
+}
+
+nav ul li a:hover {
+  color: aqua;
+}
+
+/*=============== MAIN ===============*/
+
+main {
+  position: relative;
+  top: 100px;
+}
+
+h1 {
+  font-size: 60px;
+  padding-left: 20%;
+  color: white;
+}
+
+/*=============== HOME ===============*/
+
+.home {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.home i {
+  font-size: 4em;
+  rotate: 45deg;
+}
+
+.home .left {
+  width: 4%;
+  padding: 5% 0 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.home .right {
+  width: 30%;
+  font-size: 7em;
+  font-weight: 600;
+  line-height: 1.5em;
+  padding: 8% 10%;
+}
+
+.home img {
+  padding-top: 3%;
+  height: 100%;
+  z-index: -1;
+}
+
+/*=============== ABOUT US ===============*/
+
+.about h1 {
+  color: white;
+}
+
+.about {
+  padding: 2% 10%;
+  color: white;
+  font-weight: 600;
+  text-shadow: 5px 2px 10px rgba(0, 0, 0, 0.5);
+  background: url(/assets/img/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.about_description {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.about div {
+  padding: 0 20px;
+  font-size: 1.2em;
+}
+
+/*=============== PORTFOLIO ===============*/
+
+
+.quote{
+  width: 6%;
+  padding-left: 7%;
+}
+
+.cards {
+  position: relative;
+  top: -50px;
+  display: grid;
+  gap: 8rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 55%;
+  padding: 2% 0 0 500px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.cards::-webkit-scrollbar {
+  width: 12px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.cards::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.cards::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.card {
+  width: 100%;
+  height: 450px;
+  border: #000 1px solid;
+  position: relative;
+  overflow: hidden;
+  cursor: grabbing;
+}
+
+.card-1 {
+  background: url(/assets/img/card-1.jpeg);
+}
+
+.card-2 {
+  background: url(/assets/img/card-2.jpg);
+}
+
+.card-3 {
+  background: url(/assets/img/card-3.jpg);
+}
+
+.card-4 {
+  background: url(/assets/img/card-4.jpg);
+}
+
+.img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.8s;
+}
+
+.card i {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: white;
+  color: black;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: 0.7s;
+}
+
+.card-title {
+  position: relative;
+  font-size: 1.3em;
+  padding-top: 2%;
+}
+
+.card:hover .img {
+  transform: scale(1.1);
+}
+
+.card i:hover {
+  width: 45px;
+  height: 45px;
+  transform: rotate(90deg);
+}
+
+/*=============== OUR SERVICES ===============*/
+
+.services {
+  padding: 5% 0;
+  margin: 0 20%;
+}
+
+.services-list {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px white solid;
+  padding: 2% 5%;
+  cursor: pointer;
+}
+
+
+.services-list .title {
+  font-size: 1.3rem;
+}
+
+.services-details {
+  height: 0px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 6%;
+  font-size: 1.2em;
+  transition: 01s;
+}
+
+.services-details.show-details {
+  height: 250px;
+}
+
+/*=============== OUR VALUES ===============*/
+
+#values {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: url(/assets/img/tech-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+svg {
+  width: 70%;
+  transition: 1s;
+}
+
+.values-container {
+  visibility: hidden;
+  position: absolute;
+  width: 50%;
+  height: 40%;
+  background: white;
+  opacity: 60%;
+  border: 1px solid rgb(0, 110, 255);
+  border-radius: 20px;
+  clip-path: inset(0% 50% 0% 50%);
+  transition: 1s;
+}
+
+.title-line {
+  border: 1px black solid;
+  border-radius: 25%;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.values-paragraphs {
+  color: black;
+  margin: 10%;
+  font-size: 1.5rem;
+  line-height: 1.6em;
+  display: none;
+}
+
+.values-paragraphs span {
+  font-weight: 600;
+}
+
+
+#circle-1,
+#circle-2,
+#circle-3,
+#circle-4,
+#circle-5,
+#circle-6 {
+  cursor: pointer;
+}
+
+/*=============== OUR VALUES ANIMATION ===============*/
+
+@keyframes values-rectangle-display {
+  0% {
+    clip-path: inset(0% 90% 0% 0%);
+  }
+
+  50% {
+    clip-path: inset(0% 0% 0% 100%);
+  }
+
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes values-title-display {
+  0% {
+    clip-path: inset(0% 100% 0% 0%);
+  }
+
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+#rectangle {
+  animation: values-rectangle-display 2s;
+}
+
+.values-title {
+  animation: values-title-display 1.3s;
+}
+
+
+@keyframes topRight {
+  0% {
+    clip-path: inset(90% 95% 0% 0%);
+  }
+
+  40% {
+    clip-path: inset(0% 95% 0% 0%);
+  }
+
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes topLeft {
+  0% {
+    clip-path: inset(90% 0% 0% 95%);
+  }
+
+  40% {
+    clip-path: inset(0% 0% 0% 95%);
+  }
+
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes rightCenter {
+  0% {
+    clip-path: inset(0% 100% 0% 0%);
+  }
+
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes LeftCenter {
+  0% {
+    clip-path: inset(0% 0% 0% 100%);
+  }
+
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes bottomRight {
+  0% {
+    clip-path: inset(0% 95% 90% 0%);
+  }
+
+  40% {
+    clip-path: inset(0% 95% 0% 0%);
+  }
+
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes bottomLeft {
+  0% {
+    clip-path: inset(0% 0% 90% 95%);
+  }
+
+  40% {
+    clip-path: inset(0% 0% 0% 95%);
+  }
+
+  100% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+#line-1 {
+  clip-path: inset(0% 0% 100% 100%);
+  
+}
+
+#line-2 {
+  clip-path: inset(0% 0% 100% 100%);
+
+}
+
+#line-3 {
+  clip-path: inset(0% 0% 100% 100%);
+
+}
+
+#line-4 {
+  clip-path: inset(0% 0% 100% 100%);
+
+}
+
+#line-5 {
+  clip-path: inset(0% 0% 100% 100%);
+}
+
+#line-6 {
+  clip-path: inset(0% 0% 100% 100%);
+}
+
+.active-1{
+  animation: topLeft 2.3s 0.1s forwards;
+}
+.active-2{
+  animation: LeftCenter 1.8s 1.5s forwards;
+}
+.active-3{
+  animation: bottomLeft 2.8s 0.1s forwards;
+}
+.active-4{
+  animation: topRight 2s 0.3s forwards;
+}
+.active-5{
+  animation: rightCenter 2.5s 0.4s forwards;
+}
+.active-6{
+  animation: bottomRight 3s 0.3s forwards;
+}
+
+
+@keyframes flashing {
+  0% {
+    opacity: 0%;
+  }
+
+  39% {
+    opacity: 0%;
+  }
+
+  40% {
+    opacity: 80%;
+  }
+
+  79% {
+    opacity: 80%;
+  }
+
+  80% {
+    opacity: 10%;
+  }
+
+  99% {
+    opacity: 10%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+
+#circle-1 {
+  opacity: 0%;
+  animation: flashing 0.5s 2s forwards;
+}
+
+#circle-2 {
+  opacity: 0%;
+  animation: flashing 0.5s 2.3s forwards;
+}
+
+#circle-3 {
+  opacity: 0%;
+  animation: flashing 0.5s 2.2s forwards;
+}
+
+#circle-4 {
+  opacity: 0%;
+  animation: flashing 0.5s 2.1s forwards;
+}
+
+#circle-5 {
+  opacity: 0%;
+  animation: flashing 0.5s 2.4s forwards;
+}
+
+#circle-6 {
+  opacity: 0%;
+  animation: flashing 0.5s 2s forwards;
+}
+
+/*=============== CONTACT US ===============*/
+
+.contact-form{
+  padding-left: 20%;
+}
+
+.contact-input{
+  position: relative;
+  top: -100px;
+  width: 30%;
+  padding: 1% 30% 1% 0.2%;
+  margin-top: 5%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px white solid;
+  color: white;
+  font-size: 1.3em;
+  outline: none;
+}
+
+.contact-send{
+  position: relative;
+  top: -80px;  
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 2em;
+  border: none;
+  cursor: pointer;
+  padding-left: 5%;
+}
+
+.contact-form i{
+  position: relative;
+  top: -80px;
+  font-size: 1.5em;
+}
+
+/*=============== FOOTER ===============*/
+
+.footer{
+  margin-top: 10%;
+  height: 300px;
+  background: #0f161a;
+}

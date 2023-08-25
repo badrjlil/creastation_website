@@ -518,35 +518,44 @@ svg {
   }
 }
 
-
 #circle-1 {
   opacity: 0%;
-  animation: flashing 0.5s 2s forwards;
 }
 
 #circle-2 {
   opacity: 0%;
-  animation: flashing 0.5s 2.3s forwards;
 }
 
 #circle-3 {
   opacity: 0%;
-  animation: flashing 0.5s 2.2s forwards;
 }
 
 #circle-4 {
   opacity: 0%;
-  animation: flashing 0.5s 2.1s forwards;
 }
 
 #circle-5 {
   opacity: 0%;
-  animation: flashing 0.5s 2.4s forwards;
 }
 
 #circle-6 {
   opacity: 0%;
+}
+
+.active-circle-1-6{
   animation: flashing 0.5s 2s forwards;
+}
+.active-circle-2{
+  animation: flashing 0.5s 2.3s forwards;
+}
+.active-circle-3{
+  animation: flashing 0.5s 2.2s forwards;
+}
+.active-circle-4{
+  animation: flashing 0.5s 2.1s forwards;
+}
+.active-circle-5{
+  animation: flashing 0.5s 2.4s forwards;
 }
 
 /*=============== CONTACT US ===============*/

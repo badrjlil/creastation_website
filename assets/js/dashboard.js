@@ -84,3 +84,36 @@ document.querySelector('.menu-button').addEventListener('click', function () {
 document.querySelector('.close-menu').addEventListener('click', function () {
     document.querySelector('.app-left').classList.remove('show');
 });
+
+
+function displayPage(index){
+	//hide all
+	document.getElementById("dash").classList.add("hide");
+	document.getElementById("dash").classList.add("hide");
+	document.getElementById("dash").classList.add("hide");
+	document.getElementById("dash").classList.add("hide");
+	document.getElementById("dash").classList.add("hide");
+	//get all pages
+	const page0 = document.getElementById("dash");
+	const page1 = document.getElementById("dash");
+	const page2 = document.getElementById("dash");
+	const page3 = document.getElementById("dash");
+	const page4 = document.getElementById("dash");
+	switch(index){
+		case 0:
+			page0.classList.remove("hide");
+			break;
+		case 1:
+			page1.classList.remove("hide");
+			break;
+		case 2:
+			page2.classList.remove("hide");
+			break;
+		case 3:
+			page3.classList.remove("hide");
+			break;
+		case 4:
+			page4.classList.remove("hide");
+			break;
+	}
+}

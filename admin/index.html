@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Creastation - Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="/assets/css/admin.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="app-container">
+  <div id="sidebar" class="app-left">
+    <button class="close-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="app-logo">
+      <img src="/assets/img/logo-icon.png" alt="">
+      <span>Creastation</span>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-list-item active">
+        <a class="nav-list-link" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-columns"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/></svg>
+          Dashboard
+        </a>
+      </li>
+      <li class="nav-list-item">
+        <a class="nav-list-link" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          Blogs
+        </a>
+      </li>
+      <li class="nav-list-item">
+        <a class="nav-list-link" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+          Portfolio
+        </a>
+      </li>
+      <li class="nav-list-item">
+        <a class="nav-list-link" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          Services
+        </a>
+      </li>
+      <li class="nav-list-item">
+        <a class="nav-list-link" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+          Inbox
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div id="dash" class="dashbaord">
+    <div class="app-main">
+      <div class="main-header-line">
+        <h1>Dashboard</h1>
+        <div class="action-buttons">
+          <button class="open-right-area">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </button>
+        <button class="menu-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        </div>
+      </div>
+      <div class="chart-row three">
+        <div class="chart-container-wrapper">
+          <div class="chart-container">
+            <div class="chart-info-wrapper">
+              <h2>Visits</h2>
+              <span>20.5 K</span>
+            </div>
+            <div class="chart-svg">
+              <svg viewBox="0 0 36 36" class="circular-chart pink">
+        <path class="circle-bg" d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+        <path class="circle" stroke-dasharray="30, 100" d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+        <text x="18" y="20.35" class="percentage">30%</text>
+      </svg>
+            </div>
+          </div>
+        </div>
+        <div class="chart-container-wrapper">
+          <div class="chart-container">
+            <div class="chart-info-wrapper">
+              <h2>Services Orders</h2>
+              <span>5.5 K</span>
+            </div>
+            <div class="chart-svg">
+              <svg viewBox="0 0 36 36" class="circular-chart blue">
+        <path class="circle-bg" d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+        <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+        <text x="18" y="20.35" class="percentage">60%</text>
+      </svg>
+            </div>
+          </div>
+        </div>
+        <div class="chart-container-wrapper">
+          <div class="chart-container">
+            <div class="chart-info-wrapper">
+              <h2>Messages</h2>
+              <span>10.5 K</span>
+            </div>
+             <div class="chart-svg">
+              <svg viewBox="0 0 36 36" class="circular-chart orange">
+        <path class="circle-bg" d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+        <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845
+            a 15.9155 15.9155 0 0 1 0 31.831
+            a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+        <text x="18" y="20.35" class="percentage">90%</text>
+      </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-row two">
+        <div class="chart-container-wrapper big">
+          <div class="chart-container">
+            <div class="chart-container-header">
+              <h2>Top Active Jobs</h2>
+              <span>Last 30 days</span>
+            </div>
+            <div class="line-chart">
+              <canvas id="chart"></canvas>
+            </div>
+            <div class="chart-data-details">
+              <div class="chart-details-header"></div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    <div class="app-right">
+      <button class="close-right">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="profile-box">
+        <div class="profile-photo-wrapper">
+          <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="profile">
+        </div>
+        <p class="profile-text">Anas ACHERRAT</p>
+         <p class="profile-subtext">Project Manager</p>
+      </div>
+      <div class="app-right-content">
+        <div class="app-right-section">
+        <div class="app-right-section-header">
+          <h2>Messages</h2>
+          <span class="notification-active">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+        </div>
+        <div class="message-line">
+          <img src="https://images.unsplash.com/photo-1562159278-1253a58da141?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fHBvcnRyYWl0JTIwbWFufGVufDB8MHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="profile">
+          <div class="message-text-wrapper">
+            <p class="message-text">Eric Clampton</p>
+            <p class="message-subtext">Have you planned any deadline for this?</p>
+          </div>
+        </div>
+        <div class="message-line">
+          <img src="https://images.unsplash.com/photo-1604004555489-723a93d6ce74?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=80" alt="profile">
+          <div class="message-text-wrapper">
+            <p class="message-text">Jess Flax</p>
+            <p class="message-subtext">Can we schedule another meeting for next thursday?</p>
+          </div>
+        </div>
+        <div class="message-line">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80" alt="profile">
+          <div class="message-text-wrapper">
+            <p class="message-text">Pam Halpert</p>
+            <p class="message-subtext">The candidate has been shorlisted.</p>
+          </div>
+        </div>
+      </div>
+  
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script><script  src="/assets/js/dashboard.js"></script>
+
+</body>
+</html>

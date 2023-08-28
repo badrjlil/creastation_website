@@ -27,7 +27,7 @@
 
 body {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -40,11 +40,10 @@ body {
   height: 100%;
   display: flex;
   position: relative;
-  max-width: 1680px;
 }
 
-.app-left {
-  flex-basis: 240px;
+#sidebar {
+  width: 15%;
   background-color: var(--app-bg-dark);
   height: 100%;
   overflow-y: auto;
@@ -52,13 +51,18 @@ body {
   padding: 24px 0;
   transition: all 0.4s ease-in;
 }
-.app-left.show {
+#sidebar.show {
   right: 0;
   opacity: 1;
 }
 
+#dash{
+  width: 85%;
+  display: flex;
+}
+
 .app-main {
-  flex: 1;
+  width: 80%;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -68,8 +72,7 @@ body {
 }
 
 .app-right {
-  flex-basis: 320px;
-  width: 320px;
+  width: 25%;
   background-color: var(--app-bg-dark);
   height: 100%;
   padding: 64px 0 0 0;
@@ -159,7 +162,7 @@ button {
 
 .nav-list-link {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   padding: 8px 24px;
   color: var(--nav-link);
@@ -672,116 +675,4 @@ button {
   padding: 0;
   color: var(--main-color);
   cursor: pointer;
-}
-
-@media screen and (max-width: 1350px) {
-  .app-right {
-    flex-basis: 240px;
-    width: 240px;
-  }
-
-  .app-left {
-    flex-basis: 200px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .app-right {
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    z-index: 2;
-    height: 100%;
-    width: 320px;
-    right: -100%;
-    box-shadow: 0 0 10px 5px rgba(1, 8, 31, 0.4);
-  }
-  .app-right .close-right {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: transparent;
-    padding: 0;
-    color: var(--main-color);
-    cursor: pointer;
-  }
-
-  .app-main .open-right-area {
-    display: flex;
-    color: var(--main-color);
-  }
-}
-@media screen and (max-width: 1180px) {
-  .chart-row.two {
-    flex-direction: column;
-  }
-
-  .chart-row.two .big {
-    max-width: 100%;
-  }
-
-  .chart-row.two .small {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .chart-row.two .small .chart-container {
-    width: calc(50% - 8px);
-  }
-  .chart-row.two .small .chart-container.applicants {
-    margin-top: 0;
-  }
-}
-@media screen and (max-width: 920px) {
-  .menu-button {
-    display: flex;
-  }
-
-  .app-left {
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    z-index: 2;
-    height: 100%;
-    width: 320px;
-    right: -100%;
-    box-shadow: 0 0 10px 5px rgba(1, 8, 31, 0.4);
-  }
-
-  .close-menu {
-    display: flex;
-  }
-}
-@media screen and (max-width: 650px) {
-  .chart-row.three {
-    flex-direction: column;
-  }
-
-  .chart-row.three .chart-container-wrapper {
-    width: 100%;
-  }
-
-  .chart-svg {
-    min-height: 60px;
-    min-width: 40px;
-  }
-}
-@media screen and (max-width: 520px) {
-  .chart-row.two .small {
-    flex-direction: column;
-  }
-
-  .chart-row.two .small .chart-container {
-    width: 100%;
-  }
-  .chart-row.two .small .chart-container.applicants {
-    margin-top: 16px;
-  }
-
-  .main-header-line h1 {
-    font-size: 14px;
-  }
 }

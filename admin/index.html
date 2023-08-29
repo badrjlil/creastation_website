@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>Creastation - Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="/assets/css/admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
 
 </head>
 <body>
@@ -19,39 +20,41 @@
       <span>Creastation</span>
     </div>
     <ul class="nav-list">
-      <li class="nav-list-item active">
-        <a class="nav-list-link" href="#">
+      <li id="dashboard-link" class="nav-list-item active">
+        <a class="nav-list-link" href="javascript:displayPage(0);">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-columns"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/></svg>
           Dashboard
         </a>
       </li>
-      <li class="nav-list-item">
-        <a class="nav-list-link" href="#">
+      <li id="blogs-link" class="nav-list-item">
+        <a class="nav-list-link" href="javascript:displayPage(1);">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
           Blogs
         </a>
       </li>
-      <li class="nav-list-item">
-        <a class="nav-list-link" href="#">
+      <li id="portfolio-link" class="nav-list-item">
+        <a class="nav-list-link" href="javascript:displayPage(2);">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
           Portfolio
         </a>
       </li>
-      <li class="nav-list-item">
-        <a class="nav-list-link" href="#">
+      <li id="services-link" class="nav-list-item">
+        <a class="nav-list-link" href="javascript:displayPage(3);">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
           Services
         </a>
       </li>
-      <li class="nav-list-item">
-        <a class="nav-list-link" href="#">
+      <li id="inbox-link" class="nav-list-item">
+        <a class="nav-list-link" href="javascript:displayPage(4);">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
           Inbox
         </a>
       </li>
     </ul>
   </div>
-  <div id="dash" class="dashbaord">
+
+
+  <div id="dashboard" class="dashboard hide">
     <div class="app-main">
       <div class="main-header-line">
         <h1>Dashboard</h1>
@@ -186,9 +189,92 @@
       </div>
     </div>
   </div>
+
+  <div id="blogs" class="blogs app-main hide">
+    <div class="main-header-line">
+      <h1>Blogs</h1>
+    </div>
+
+    <div class="search-box">
+      
+      <i class="ri-search-line"></i>
+      <input type="text" placeholder="Search here">
+    </div>
+
+    <div class="blogs-main">
+      <div class="post">
+        <img class="post-image" src="/assets/img/card-1.jpeg">
+        <div class="post-title">
+          The content of evangelism
+        </div>
+        <div class="post-buttons">
+          <a href="">
+            <i class="ri-edit-2-line"></i>
+          </a>
+          <a href="">
+            <i class="ri-archive-line"></i>
+          </a>
+          <a href="">
+            <i class="ri-delete-bin-line"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post">
+        <img class="post-image" src="/assets/img/card-2.jpg">
+        <div class="post-title">
+          The content of evangelism
+        </div>
+        <div class="post-buttons">
+          <a href="">
+            <i class="ri-edit-2-line"></i>
+          </a>
+          <a href="">
+            <i class="ri-archive-line"></i>
+          </a>
+          <a href="">
+            <i class="ri-delete-bin-line"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post">
+        <img class="post-image" src="/assets/img/card-3.jpg">
+        <div class="post-title">
+          The content of evangelism
+        </div>
+        <div class="post-buttons">
+          <a href="">
+            <i class="ri-edit-2-line"></i>
+          </a>
+          <a href="">
+            <i class="ri-archive-line"></i>
+          </a>
+          <a href="">
+            <i class="ri-delete-bin-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="portfolio" class="portfolio app-main">
+      <div class="main-header-line">
+        <h1>Portfolio</h1>
+      </div>
+
+      
+
+  </div>
+
+  <div id="services" class="services">
+
+  </div>
+
+  <div id="inbox" class="inbox">
+
+  </div>
 </div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script><script  src="/assets/js/dashboard.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script><script  src="/assets/js/admin.js"></script>
 
 </body>
 </html>

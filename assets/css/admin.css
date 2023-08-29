@@ -56,7 +56,7 @@ body {
   opacity: 1;
 }
 
-#dash{
+.dashboard{
   width: 85%;
   display: flex;
 }
@@ -675,4 +675,88 @@ button {
   padding: 0;
   color: var(--main-color);
   cursor: pointer;
+}
+
+/* =========================================== Blogs =========================================== */
+
+.blogs{
+  width: 80%;
+  color: white;
+}
+
+.search-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box input{
+  width: 25%;
+  height: 32px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+}
+
+.search-box i{
+  color: black;
+  position: relative;
+  right: -25px;
+}
+
+.blogs-main{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  width: 65%;
+  height: 80px;
+  border: 1px white solid;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.post:hover{
+  box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.post-image{
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.post-title{
+  margin-left: 2%;
+}
+
+
+
+.post-buttons a{
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none; 
+  transition: 0.5s;
+}
+
+.post-buttons a:hover{
+  color: aqua;
+}
+
+
+
+/* ===========================================  =========================================== */
+
+.hide{
+  display: none;
 }

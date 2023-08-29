@@ -86,34 +86,54 @@ document.querySelector('.close-menu').addEventListener('click', function () {
 });
 
 
+
+
 function displayPage(index){
-	//hide all
-	document.getElementById("dash").classList.add("hide");
-	document.getElementById("dash").classList.add("hide");
-	document.getElementById("dash").classList.add("hide");
-	document.getElementById("dash").classList.add("hide");
-	document.getElementById("dash").classList.add("hide");
-	//get all pages
-	const page0 = document.getElementById("dash");
-	const page1 = document.getElementById("dash");
-	const page2 = document.getElementById("dash");
-	const page3 = document.getElementById("dash");
-	const page4 = document.getElementById("dash");
+	document.getElementById("dashboard").classList.add("hide");
+	document.getElementById("blogs").classList.add("hide");
+	document.getElementById("portfolio").classList.add("hide");
+	document.getElementById("services").classList.add("hide");
+	document.getElementById("inbox").classList.add("hide");
+
+	var navItems = document.querySelectorAll(".nav-list-item");
+
+	for (var i = 0; i < navItems.length; i++) {
+		navItems[i].classList.remove("active");
+	  }
+
+	const navItem1 = document.getElementById("dashboard-link");
+	const navItem2 = document.getElementById("blogs-link");
+	const navItem3 = document.getElementById("portfolio-link");
+	const navItem4 = document.getElementById("services-link");
+	const navItem5 = document.getElementById("inbox-link");
+
+
+	const page1 = document.getElementById("dashboard");
+	const page2 = document.getElementById("blogs");
+	const page3 = document.getElementById("portfolio");
+	const page4 = document.getElementById("services");
+	const page5 = document.getElementById("inbox");
+
 	switch(index){
 		case 0:
-			page0.classList.remove("hide");
+			page1.classList.remove("hide");
+			navItem1.classList.add("active")
 			break;
 		case 1:
-			page1.classList.remove("hide");
+			page2.classList.remove("hide");
+			navItem2.classList.add("active")
 			break;
 		case 2:
-			page2.classList.remove("hide");
+			page3.classList.remove("hide");
+			navItem3.classList.add("active")
 			break;
 		case 3:
-			page3.classList.remove("hide");
+			page4.classList.remove("hide");
+			navItem4.classList.add("active")
 			break;
 		case 4:
-			page4.classList.remove("hide");
+			page5.classList.remove("hide");
+			navItem5.classList.add("active")
 			break;
 	}
 }

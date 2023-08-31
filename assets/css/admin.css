@@ -66,9 +66,7 @@ body {
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: var(--app-bg-light);
   padding: 24px;
-  background: radial-gradient(circle, #051340 1%, #040f32 100%);
 }
 
 .app-right {
@@ -714,6 +712,7 @@ button {
 
 .post {
   width: 65%;
+  min-width: 600px;
   height: 80px;
   border: 1px white solid;
   padding: 10px;
@@ -740,8 +739,6 @@ button {
   margin-left: 2%;
 }
 
-
-
 .post-buttons a{
   color: white;
   font-size: 1.5em;
@@ -753,9 +750,128 @@ button {
   color: aqua;
 }
 
+/* =========================================== Portfolio =========================================== */
+
+.portfolio-main{
+  color: white;
+  margin: 40px 0 0 40px;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+.portfolio-container{
+  width: 300px;
+  height: 300px;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.portfolio-container img{
+  width: 95%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.portfolio-title{
+  margin: 20px 10px;
+}
+
+.portfolio-buttons a{
+  color: white;
+  text-decoration: none;
+  padding: 3px;
+  font-size: 1.2em;
+}
 
 
-/* ===========================================  =========================================== */
+/* =========================================== Services =========================================== */
+
+.services{
+  width: 80%;
+  color: white;
+}
+
+.services-main{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service {
+  width: 65%;
+  min-width: 600px;
+  height: 80px;
+  border: 1px white solid;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.service:hover{
+  box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-image{
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.service-title{
+  margin-left: 2%;
+}
+
+.service-buttons a{
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none; 
+  transition: 0.5s;
+}
+
+.service-buttons a:hover{
+  color: aqua;
+}
+
+
+/* =========================================== Inbox =========================================== */
+
+.inbox{
+  color: white;
+}
+
+.inbox-container{
+  display: flex;
+  justify-content: center;
+}
+
+.inbox-container table{
+  width: 100%;
+}
+
+.inbox-container td, .inbox-container th {
+  text-align: center;
+  padding:15px;
+  color: #ddd;
+  border-bottom: 1px solid #81818140;
+}
+
+.inbox-container table a{
+  text-decoration: none;
+  color: white;
+}
 
 .hide{
   display: none;

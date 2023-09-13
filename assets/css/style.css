@@ -182,18 +182,22 @@ h1 {
 
 .card-1 {
   background: url(/assets/img/card-1.jpeg);
+  background-position: center;
 }
 
 .card-2 {
   background: url(/assets/img/card-2.jpg);
+  background-position: center;
 }
 
 .card-3 {
   background: url(/assets/img/card-3.jpg);
+  background-position: center;
 }
 
 .card-4 {
   background: url(/assets/img/card-4.jpg);
+  background-position: center;
 }
 
 .img {
@@ -253,6 +257,19 @@ h1 {
   cursor: pointer;
 }
 
+.services-details .image{
+  width: 40%;
+  height: 300px;
+  background-image: url("../img/card-1.jpeg");
+  background-size: cover;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 15px;
+}
+.services-details .parag{
+  width: 60%;
+}
 
 .services-list .title {
   font-size: 1.3rem;
@@ -266,14 +283,16 @@ h1 {
   padding: 0 6%;
   font-size: 1.2em;
   transition: 01s;
+  gap: 20px;
 }
 
 .services-images{
-  height: 50%;
+  height: 100%;
+  width: 100%;
 }
 
 .services-details.show-details {
-  height: 250px;
+  height: fit-content;
 }
 
 /*=============== OUR VALUES ===============*/
@@ -599,6 +618,35 @@ svg {
   position: relative;
   top: -80px;
   font-size: 1.5em;
+}
+
+/*==BLOG==*/
+.blog-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates four equal-width columns */
+  gap: 20px;
+  padding: 0 20%;
+}
+
+.blog-container{
+  width: 100%;
+  height: 100%;
+  background-color: #0f161a;
+  border-radius: 15px;
+  padding: 5px;
+}
+.blog-container img{
+  width: 100%;
+  border-radius: 15px;
+}
+.blog-container h1{
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+.blog-container p{
+  padding: 0;
+  margin: 0;
 }
 
 /*=============== FOOTER ===============*/

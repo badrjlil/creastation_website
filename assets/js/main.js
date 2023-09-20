@@ -92,49 +92,50 @@ sr.reveal('.about_description', {delay: 100, origin: 'left', interval: 100})
 
 sr.reveal('.values')
 
+//////////////////////////////////////////////////////////
 
-//lines
-const pathElement1 = document.getElementById("line-1");
-const pathElement2 = document.getElementById("line-2");
-const pathElement3 = document.getElementById("line-3");
-const pathElement4 = document.getElementById("line-4");
-const pathElement5 = document.getElementById("line-5");
-const pathElement6 = document.getElementById("line-6");
+const pathElements = [
+  "line-left-top",
+  "line-left-center",
+  "line-left-bottom",
+  "line-right-top",
+  "line-right-center",
+  "line-right-bottom",
+  "Rectangle",
+  "OUR_VALUES",
+];
 
-
-//circles
-const circleElement1 = document.getElementById("circle-1");
-const circleElement2 = document.getElementById("circle-2");
-const circleElement3 = document.getElementById("circle-3");
-const circleElement4 = document.getElementById("circle-4");
-const circleElement5 = document.getElementById("circle-5");
-const circleElement6 = document.getElementById("circle-6");
+const circleElements = [
+  "circles",
+  "circles-2",
+  "circles-3",
+  "circles-4",
+  "circles-5",
+  "circles-6",
+  "Transparency",
+  "Creativity",
+  "Responsibility",
+  "Adaptability",
+  "Collaboration",
+  "Innovation",
+];
 
 function handleScroll() {
-  // Get the current scroll position
   const scrollPosition = window.scrollY;
 
-  if(scrollPosition>=1800){
-    //lines
-    pathElement1.classList.add("active-1");
-    pathElement2.classList.add("active-2");
-    pathElement3.classList.add("active-3");
-    pathElement4.classList.add("active-4");
-    pathElement5.classList.add("active-5");
-    pathElement6.classList.add("active-6");
-    //circles
-    circleElement1.classList.add("active-circle-1-6");
-    circleElement2.classList.add("active-circle-2");
-    circleElement3.classList.add("active-circle-3");
-    circleElement4.classList.add("active-circle-4");
-    circleElement5.classList.add("active-circle-5");
-    circleElement6.classList.add("active-circle-1-6");
+  if (scrollPosition >= 1300) {
+    pathElements.forEach((id, index) => {
+      const pathElement = document.getElementById(id);
+      pathElement.classList.add(`active-${index + 1}`);
+    });
+
+    circleElements.forEach((id, index) => {
+      const circleElement = document.getElementById(id);
+      circleElement.classList.add(`active-circle-${index % 5 + 1}`);
+    });
   }
-  
-  // Log the scroll position
+
   console.log("Scroll position:", scrollPosition);
-
-
 }
 
 window.addEventListener("scroll", handleScroll);

@@ -302,9 +302,10 @@ h1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: url(/assets/img/tech-background.png);
+  background: url();
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 200px;
 }
 
 svg {
@@ -316,7 +317,7 @@ svg {
   visibility: hidden;
   position: absolute;
   width: 50%;
-  height: 40%;
+  height: 50%;
   background: white;
   opacity: 60%;
   border: 1px solid rgb(0, 110, 255);
@@ -344,12 +345,12 @@ svg {
 }
 
 
-#circle-1,
-#circle-2,
-#circle-3,
-#circle-4,
-#circle-5,
-#circle-6 {
+#circles,
+#circles-2,
+#circles-3,
+#circles-4,
+#circles-5,
+#circles-6 {
   cursor: pointer;
 }
 
@@ -379,12 +380,20 @@ svg {
   }
 }
 
-#rectangle {
-  animation: values-rectangle-display 2s;
+#Rectangle {
+  clip-path: inset(0% 100% 0% 0%);
 }
 
-.values-title {
-  animation: values-title-display 1.3s;
+#OUR_VALUES {
+  clip-path: inset(0% 100% 0% 0%);
+}
+
+.active-7 {
+  animation: values-rectangle-display 2s forwards;
+}
+
+.active-8 {
+  animation: values-title-display 1.3s forwards;
 }
 
 
@@ -464,31 +473,31 @@ svg {
   }
 }
 
-#line-1 {
+#line-left-top {
   clip-path: inset(0% 0% 100% 100%);
   
 }
 
-#line-2 {
+#line-left-center {
   clip-path: inset(0% 0% 100% 100%);
 
 }
 
-#line-3 {
+#line-left-bottom {
   clip-path: inset(0% 0% 100% 100%);
 
 }
 
-#line-4 {
+#line-right-top {
   clip-path: inset(0% 0% 100% 100%);
 
 }
 
-#line-5 {
+#line-right-center {
   clip-path: inset(0% 0% 100% 100%);
 }
 
-#line-6 {
+#line-right-bottom {
   clip-path: inset(0% 0% 100% 100%);
 }
 
@@ -542,31 +551,31 @@ svg {
   }
 }
 
-#circle-1 {
+#circles, #Transparency {
   opacity: 0%;
 }
 
-#circle-2 {
+#circles-2, #Creativity {
   opacity: 0%;
 }
 
-#circle-3 {
+#circles-3, #Responsibility {
   opacity: 0%;
 }
 
-#circle-4 {
+#circles-4, #Adaptability {
   opacity: 0%;
 }
 
-#circle-5 {
+#circles-5, #Collaboration {
   opacity: 0%;
 }
 
-#circle-6 {
+#circles-6, #Innovation {
   opacity: 0%;
 }
 
-.active-circle-1-6{
+.active-circle-1{
   animation: flashing 0.5s 2s forwards;
 }
 .active-circle-2{

@@ -259,17 +259,16 @@ h1 {
 
 .services-details .image{
   width: 40%;
-  height: 300px;
+  height: 200px;
   background-image: url("../img/card-1.jpeg");
   background-size: cover;
   background-clip: border-box;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 15px;
+  margin: 10px;
 }
-.services-details .parag{
-  width: 60%;
-}
+
 
 .services-list .title {
   font-size: 1.3rem;

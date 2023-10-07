@@ -1,3 +1,6 @@
+<?php
+  require_once("assets/php/connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +25,7 @@
   <header class="header hidden" id="header">
     <nav class="nav container">
       <a href="" class="nav_logo">
-        <img src="/assets/img/logo.png">
+        <img src="assets/img/logo.png">
       </a>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -50,7 +53,7 @@
         <span>Driving Transformation.</span>
       </div>
 
-      <img src="/assets/img/man.png" class="home_img">
+      <img src="assets/img/man.png" class="home_img">
     </section>
 
 
@@ -243,84 +246,34 @@
     <!--=============== OUR SERVICES ===============-->
     <section class="section services" id="services">
       <h1>Services</h1>
+      <?php
+        $SQL="SELECT * FROM serv_cat";
+        $categories=mysqli_query($connect,$SQL);
+        while ($cat = mysqli_fetch_assoc($categories)){
+      ?>
 
-      <div class="services-list">
-        <div class="title">Design</div>
-        <i class="fa-solid fa-plus"></i>
-      </div>
+        <div class="services-list">
+          <div class="title"><?php echo $cat['cat_title'];?></div>
+          <i class="fa-solid fa-plus"></i>
+        </div>
 
       <div class="services-details">
-        <div class="image">
+        <div class="image" style="background-image: url('assets/img/<?php echo $cat['cat_img']; ?>');" >
         </div>
         <div class="parag">
           <p>
-            * UI/UX Design <br>
-            * Mobile App Design <br>
-            * Brand & Visual Design <br>
-            * Logo Design <br>
-            * Marketing Collateral <br>
+            <?php
+              $cat_id=$cat['cat_id'];
+              $SQL="SELECT * FROM serv WHERE cat_id = $cat_id";
+              $services=mysqli_query($connect,$SQL);
+              while($serv = mysqli_fetch_assoc($services)){
+                echo '- ' . $serv['serv_title'] . '<br>';
+              } 
+           ?>
           </p>
         </div>
       </div>
-
-      <div class="services-list">
-        <div class="title">Digital Marketing</div>
-        <div><i class="fa-solid fa-plus"></i></div>
-      </div>
-
-      <div class="services-details">
-        <div class="image">
-        </div>
-        <div class="parag">
-          <p>
-            * Social Media Marketing <br>
-            * eCommerce Marketing <br>
-            * Pay Per Click (PPC) Services <br>
-            * Content Marketing	<br>
-          </p>
-        </div>
-      </div>
-
-      <div class="services-list">
-        <div class="title">Software Development</div>
-        <div><i class="fa-solid fa-plus"></i></div>
-      </div>
-
-      <div class="services-details">
-        <div class="image">
-        </div>
-        <div class="parag">
-          <p>
-            * Web Design & Web Development <br>
-            * eCommerce Web Development <br>
-            * Custom Website Development <br>
-            * Web App Development	<br>
-            * MVP Development
-          </p>
-        </div>
-      </div>
-
-      
-      <div class="services-list">
-        <div class="title">Mobile App Development</div>
-        <div><i class="fa-solid fa-plus"></i></div>
-      </div>
-
-      <div class="services-details">
-        <div class="image">
-        </div>
-        <div class="parag">
-          <p>
-            * Mobile Application Development  <br>
-            * iOS App Development <br>
-            * Android App Development <br>
-            * Hybrid App Development	<br>
-          </p>
-        </div>
-      </div>
-
-      
-      
+      <?php }?>
     </section>
 
     <!--=============== PORTFOLIO ===============-->
@@ -330,35 +283,26 @@
         Showcasing Creative Achievements
       </div>
       <div class="cards">
-
+        <?php
+          $SQL="SELECT * FROM portf";
+          $portfolios=mysqli_query($connect,$SQL);
+          while ($portf = mysqli_fetch_assoc($portfolios)){
+            $serv_id=$portf['serv'];
+            $SQL="SELECT serv_title FROM serv WHERE serv_id = $serv_id";
+            $query = mysqli_query($connect,$SQL);
+            $serv=mysqli_fetch_assoc($query);
+          
+        ?>
         <div class="card-container">
           <div class="card">
-            <div class="img card-1"></div><i class="fa-solid fa-plus"></i>
+            <div class="img" style="background-image: url('assets/img/<?php echo $portf['img'] ?>');"></div><i class="fa-solid fa-plus"></i>
           </div>
-          <div class="card-title">Polestar</div>
+          <div class="card-title"><?php echo $portf['title']; ?></div>
+          <div><small><?php echo $serv['serv_title']; ?></small></div>
         </div>
-
-        <div class="card-container">
-          <div class="card">
-            <div class="img card-2"></div><i class="fa-solid fa-plus"></i>
-          </div>
-          <div class="card-title">Polestar</div>
-        </div>
-
-        <div class="card-container">
-          <div class="card">
-            <div class="img card-3"></div><i class="fa-solid fa-plus"></i>
-          </div>
-          <div class="card-title">Polestar</div>
-        </div>
-
-        <div class="card-container">
-          <div class="card">
-            <div class="img card-4"></div><i class="fa-solid fa-plus"></i>
-          </div>
-          <div class="card-title">Polestar</div>
-        </div>
-
+        <?php
+          }
+        ?>
       </div>
     </section>
 
@@ -380,30 +324,22 @@
     <section id="blog">
       <h1>Our Recent Blogs</h1>
       <div class="blog-grid">
+        <?php
+          $SQL="SELECT SUBSTR(title, 1, 25) AS title, SUBSTR(descr, 1, 70) AS descr, img FROM blogs";
+          $blogs=mysqli_query($connect,$SQL);
+          while($blog = mysqli_fetch_assoc($blogs)){
+
+          
+        ?>
         <div class="blog-container">
-          <img src="/assets/img/card-1.jpeg" alt="">
-          <h1>title</h1>
-          <p>description</p>
-          <a href="#">read more</a>
+          <img src="assets/img/<?php echo $blog['img']; ?>">
+          <h1><?php echo $blog['title'] . "..."; ?></h1>
+          <p><?php echo $blog['descr'] . "..."; ?></p>
+          <a href="#">Read more</a>
         </div>
-        <div class="blog-container">
-          <img src="/assets/img/card-2.jpg" alt="">
-          <h1>title</h1>
-          <p>description</p>
-          <a href="#">read more</a>
-        </div>
-        <div class="blog-container">
-          <img src="/assets/img/card-3.jpg" alt="">
-          <h1>title</h1>
-          <p>description</p>
-          <a href="#">read more</a>
-        </div>
-        <div class="blog-container">
-          <img src="/assets/img/card-4.jpg" alt="">
-          <h1>title</h1>
-          <p>description</p>
-          <a href="#">read more</a>
-        </div>
+        <?php
+        }
+        ?>
       </div>
     </section>
 
@@ -476,7 +412,7 @@
   
 
   <!--=============== MAIN JS ===============-->
-  <script src="/assets/js/scrollreveal.min.js"></script>
+  <script src="assets/js/scrollreveal.min.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>

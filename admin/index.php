@@ -1,3 +1,6 @@
+<?php
+  require_once("../assets/php/connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +9,7 @@
   <title>Creastation - Dashboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-  <link rel="stylesheet" href="/assets/css/admin.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
 
 <body>
@@ -22,7 +25,7 @@
         </svg>
       </button>
       <div class="app-logo">
-        <img src="/assets/img/logo-icon.png" alt="">
+        <img src="../assets/img/logo-icon.png" alt="">
         <span>Creastation</span>
       </div>
       <ul class="nav-list">
@@ -202,7 +205,7 @@
         <div class="profile-box">
           <div class="profile-photo-wrapper">
             <img
-              src="/assets/img/user.jpg"
+              src="../assets/img/user.jpg"
               alt="profile">
           </div>
           <p class="profile-text">Anas ACHERRAT</p>
@@ -264,8 +267,36 @@
       </div>
 
       <div class="blogs-main">
+        <?php
+        $SQL="SELECT id, SUBSTR(title, 1, 30) AS title, img FROM blogs";
+        $blogs=mysqli_query($connect,$SQL);
+        while($blog = mysqli_fetch_assoc($blogs)){
+
+        
+        ?>
         <div class="post">
-          <img class="post-image" src="/assets/img/card-1.jpeg">
+          <img class="post-image" src="../assets/img/<?php echo $blog['img']; ?>">
+          <div class="post-title">
+            <?php echo $blog['title'] . "..."; ?>
+          </div>
+          <div class="post-buttons">
+            <a href="">
+              <i class="ri-edit-2-line"></i>
+            </a>
+            <a href="">
+              <i class="ri-archive-line"></i>
+            </a>
+            <a href="">
+              <i class="ri-delete-bin-line"></i>
+            </a>
+          </div>
+        </div>
+        <?php
+          }
+        ?>
+        <!--
+        <div class="post">
+          <img class="post-image" src="../assets/img/card-2.jpg">
           <div class="post-title">
             The content of evangelism
           </div>
@@ -282,7 +313,7 @@
           </div>
         </div>
         <div class="post">
-          <img class="post-image" src="/assets/img/card-2.jpg">
+          <img class="post-image" src="../assets/img/card-3.jpg">
           <div class="post-title">
             The content of evangelism
           </div>
@@ -298,23 +329,7 @@
             </a>
           </div>
         </div>
-        <div class="post">
-          <img class="post-image" src="/assets/img/card-3.jpg">
-          <div class="post-title">
-            The content of evangelism
-          </div>
-          <div class="post-buttons">
-            <a href="">
-              <i class="ri-edit-2-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-archive-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-delete-bin-line"></i>
-            </a>
-          </div>
-        </div>
+-->
       </div>
     </div>
 
@@ -330,7 +345,7 @@
 
       <div class="portfolio-main">
         <div class="portfolio-container">
-          <img src="/assets/img/card-1.jpeg">
+          <img src="../assets/img/card-1.jpeg">
           <div class="portfolio-title">
             Creastation - Web Design
           </div>
@@ -345,7 +360,7 @@
         </div>
 
         <div class="portfolio-container">
-          <img src="/assets/img/card-2.jpg">
+          <img src="../assets/img/card-2.jpg">
           <div class="portfolio-title">
             Creastation - Web Design
           </div>
@@ -359,7 +374,7 @@
           </div>
         </div>
         <div class="portfolio-container">
-          <img src="/assets/img/card-3.jpg">
+          <img src="../assets/img/card-3.jpg">
           <div class="portfolio-title">
             Creastation - Web Design
           </div>
@@ -373,7 +388,7 @@
           </div>
         </div>
         <div class="portfolio-container">
-          <img src="/assets/img/card-4.jpg">
+          <img src="../assets/img/card-4.jpg">
           <div class="portfolio-title">
             Creastation - Web Design
           </div>
@@ -387,7 +402,7 @@
           </div>
         </div>
         <div class="portfolio-container">
-          <img src="/assets/img/card-1.jpeg">
+          <img src="../assets/img/card-1.jpeg">
           <div class="portfolio-title">
             Creastation - Web Design
           </div>
@@ -418,7 +433,7 @@
 
       <div class="services-main">
         <div class="service">
-          <img class="service-image" src="/assets/img/card-1.jpeg">
+          <img class="service-image" src="../assets/img/card-1.jpeg">
           <div class="service-title">
             The content of evangelism
           </div>
@@ -435,7 +450,7 @@
           </div>
         </div>
         <div class="service">
-          <img class="service-image" src="/assets/img/card-2.jpg">
+          <img class="service-image" src="../assets/img/card-2.jpg">
           <div class="service-title">
             The content of evangelism
           </div>
@@ -452,7 +467,7 @@
           </div>
         </div>
         <div class="service">
-          <img class="service-image" src="/assets/img/card-3.jpg">
+          <img class="service-image" src="../assets/img/card-3.jpg">
           <div class="service-title">
             The content of evangelism
           </div>
@@ -530,7 +545,7 @@
   </div>
   <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js'></script>
-  <script src="/assets/js/admin.js"></script>
+  <script src="../assets/js/admin.js"></script>
 
 </body>
 

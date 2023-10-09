@@ -1,5 +1,5 @@
 <?php
-  require_once("../assets/php/connect.php");
+require_once("../assets/php/connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +93,7 @@
     </div>
 
 
-    <div id="dashboard" class="dashboard">
+    <div id="dashboard" class="dashboard hide">
       <div class="app-main">
         <div class="main-header-line">
           <h1>Dashboard</h1>
@@ -204,9 +204,7 @@
         </button>
         <div class="profile-box">
           <div class="profile-photo-wrapper">
-            <img
-              src="../assets/img/user.jpg"
-              alt="profile">
+            <img src="../assets/img/user.jpg" alt="profile">
           </div>
           <p class="profile-text">Anas ACHERRAT</p>
           <p class="profile-subtext">Project Manager</p>
@@ -256,43 +254,50 @@
       </div>
     </div>
 
-    <div id="blogs" class="blogs app-main hide">
+    <div id="blogs" class="blogs app-main">
       <div class="main-header-line">
         <h1>Blogs</h1>
       </div>
 
-      <div class="search-box">
-        <i class="ri-search-line"></i>
-        <input type="text" placeholder="Search here">
+      <div class="container">
+        <div class="empty">
+
+        </div>
+        <div class="search-box">
+          <i class="ri-search-line"></i>
+          <input type="text" placeholder="Search here">
+        </div>
+        <div class="addbtn">
+          <a href="./operations/blog/addblog.php">Add Blog</a>
+        </div>
       </div>
 
       <div class="blogs-main">
         <?php
-        $SQL="SELECT id, SUBSTR(title, 1, 30) AS title, img FROM blogs";
-        $blogs=mysqli_query($connect,$SQL);
-        while($blog = mysqli_fetch_assoc($blogs)){
+        $SQL = "SELECT id, SUBSTR(title, 1, 30) AS title, img FROM blogs";
+        $blogs = mysqli_query($connect, $SQL);
+        while ($blog = mysqli_fetch_assoc($blogs)) {
 
-        
-        ?>
-        <div class="post">
-          <img class="post-image" src="../assets/img/<?php echo $blog['img']; ?>">
-          <div class="post-title">
-            <?php echo $blog['title'] . "..."; ?>
+
+          ?>
+          <div class="post">
+            <img class="post-image" src="../assets/img/<?php echo $blog['img']; ?>">
+            <div class="post-title">
+              <?php echo $blog['title'] . "..."; ?>
+            </div>
+            <div class="post-buttons">
+              <a href=<?php echo "./operations/blog/editblog.php?id=" . $blog['id'] ?> <i class="ri-edit-2-line"></i>
+              </a>
+              <a href="">
+                <i class="ri-archive-line"></i>
+              </a>
+              <a href="">
+                <i class="ri-delete-bin-line"></i>
+              </a>
+            </div>
           </div>
-          <div class="post-buttons">
-            <a href="">
-              <i class="ri-edit-2-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-archive-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-delete-bin-line"></i>
-            </a>
-          </div>
-        </div>
-        <?php
-          }
+          <?php
+        }
         ?>
         <!--
         <div class="post">

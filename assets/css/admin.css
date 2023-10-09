@@ -1,12 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 :root {
   --app-bg-dark: #01081f;
-  --app-bg-before: linear-gradient(180deg, rgba(1,8,31,0) 0%, rgba(1,8,31,1) 100%);
-  --app-bg-before-2: linear-gradient(0deg, rgba(1,8,31,0) 0%, rgba(1,8,31,1) 100%);
+  --app-bg-before: linear-gradient(
+    180deg,
+    rgba(1, 8, 31, 0) 0%,
+    rgba(1, 8, 31, 1) 100%
+  );
+  --app-bg-before-2: linear-gradient(
+    0deg,
+    rgba(1, 8, 31, 0) 0%,
+    rgba(1, 8, 31, 1) 100%
+  );
   --app-bg-light: #151c32;
   --app-logo: #3d7eff;
   --nav-link: #5e6a81;
@@ -14,7 +24,7 @@
   --list-item-hover: #0c1635;
   --main-color: #fff;
   --secondary-color: #5e6a81;
-  --color-light: rgba(52, 129, 210, .2);
+  --color-light: rgba(52, 129, 210, 0.2);
   --warning-bg: #ffe5e5;
   --warning-icon: #ff8181;
   --applicant-bg: #e3fff1;
@@ -56,7 +66,7 @@ body {
   opacity: 1;
 }
 
-.dashboard{
+.dashboard {
   width: 85%;
   display: flex;
 }
@@ -111,7 +121,7 @@ body {
   padding: 0 24px;
 }
 
-.app-logo img{
+.app-logo img {
   width: 50px;
 }
 
@@ -231,7 +241,8 @@ button {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.6);
 }
-.main-header-line input:hover, .main-header-line input:focus {
+.main-header-line input:hover,
+.main-header-line input:focus {
   border: 1px solid #3481d2;
   box-shadow: 0 0 0 3px var(--color-light);
 }
@@ -323,7 +334,7 @@ button {
   stroke-width: 1.6;
   stroke-linecap: round;
   -webkit-animation: progress 1s ease-out forwards;
-          animation: progress 1s ease-out forwards;
+  animation: progress 1s ease-out forwards;
 }
 
 .circular-chart.orange .circle {
@@ -459,7 +470,7 @@ button {
   height: 32px;
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-right: 10px;
   flex-shrink: 0;
 }
@@ -503,10 +514,11 @@ button {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
-.profile-text, .profile-subtext {
+.profile-text,
+.profile-subtext {
   font-size: 12px;
   line-height: 16px;
   color: var(--secondary-color);
@@ -560,7 +572,7 @@ button {
   height: 32px;
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-right: 8px;
 }
 
@@ -677,19 +689,29 @@ button {
 
 /* =========================================== Blogs =========================================== */
 
-.blogs{
+.blogs {
   width: 80%;
   color: white;
 }
 
-.search-box{
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 950px;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.search-box {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.search-box input{
-  width: 25%;
+.search-box input {
   height: 32px;
   border-radius: 50px;
   border: none;
@@ -697,13 +719,28 @@ button {
   padding: 10px 30px;
 }
 
-.search-box i{
+.addbtn a {
+  color: white;
+  text-decoration: none;
+  padding: 3px 10px;
+  font-size: 1.2em;
+  background-color: var(--app-bg-light);
+  border-radius: 5px;
+  transition: 0.5s;
+  border: 1px solid white;
+}
+
+.addbtn a:hover {
+  background-color: #01081f;
+}
+
+.search-box i {
   color: black;
   position: relative;
   right: -25px;
 }
 
-.blogs-main{
+.blogs-main {
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -712,7 +749,7 @@ button {
 
 .post {
   width: 65%;
-  min-width: 600px;
+  min-width: fit-content;
   height: 80px;
   border: 1px white solid;
   padding: 10px;
@@ -724,43 +761,43 @@ button {
   cursor: pointer;
 }
 
-.post:hover{
+.post:hover {
   box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
 }
 
-.post-image{
+.post-image {
   width: 3.5em;
   height: 3.5em;
   border-radius: 5px;
   object-fit: cover;
 }
 
-.post-title{
+.post-title {
   margin-left: 2%;
 }
 
-.post-buttons a{
+.post-buttons a {
   color: white;
   font-size: 1.5em;
-  text-decoration: none; 
+  text-decoration: none;
   transition: 0.5s;
 }
 
-.post-buttons a:hover{
+.post-buttons a:hover {
   color: aqua;
 }
 
 /* =========================================== Portfolio =========================================== */
 
-.portfolio-main{
+.portfolio-main {
   color: white;
   margin: 40px 0 0 40px;
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.portfolio-container{
+.portfolio-container {
   width: 300px;
   height: 300px;
   border: 1px solid white;
@@ -772,33 +809,32 @@ button {
   margin: 10px;
 }
 
-.portfolio-container img{
+.portfolio-container img {
   width: 95%;
   height: 200px;
   border-radius: 10px;
   object-fit: cover;
 }
 
-.portfolio-title{
+.portfolio-title {
   margin: 20px 10px;
 }
 
-.portfolio-buttons a{
+.portfolio-buttons a {
   color: white;
   text-decoration: none;
   padding: 3px;
   font-size: 1.2em;
 }
 
-
 /* =========================================== Services =========================================== */
 
-.services{
+.services {
   width: 80%;
   color: white;
 }
 
-.services-main{
+.services-main {
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -819,60 +855,108 @@ button {
   cursor: pointer;
 }
 
-.service:hover{
+.service:hover {
   box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
 }
 
-.service-image{
+.service-image {
   width: 3.5em;
   height: 3.5em;
   border-radius: 5px;
   object-fit: cover;
 }
 
-.service-title{
+.service-title {
   margin-left: 2%;
 }
 
-.service-buttons a{
+.service-buttons a {
   color: white;
   font-size: 1.5em;
-  text-decoration: none; 
+  text-decoration: none;
   transition: 0.5s;
 }
 
-.service-buttons a:hover{
+.service-buttons a:hover {
   color: aqua;
 }
 
-
 /* =========================================== Inbox =========================================== */
 
-.inbox{
+.inbox {
   color: white;
 }
 
-.inbox-container{
+.inbox-container {
   display: flex;
   justify-content: center;
 }
 
-.inbox-container table{
+.inbox-container table {
   width: 100%;
 }
 
-.inbox-container td, .inbox-container th {
+.inbox-container td,
+.inbox-container th {
   text-align: center;
-  padding:15px;
+  padding: 15px;
   color: #ddd;
   border-bottom: 1px solid #81818140;
 }
 
-.inbox-container table a{
+.inbox-container table a {
   text-decoration: none;
   color: white;
 }
 
-.hide{
+.hide {
   display: none;
+}
+
+/**********************edit-add*********************/
+.editform {
+  width: 100%;
+}
+.contentedit {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+.contentedit h1 {
+  color: white !important;
+  text-align: start;
+}
+
+.input-and-save {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contentedit input[type="text"] {
+  padding: 10px;
+  border-radius: 10px;
+  width: 50%;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: #01081f;
+}
+
+.contentedit input[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #01081f;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.contentedit textarea {
+  height: 100%;
 }

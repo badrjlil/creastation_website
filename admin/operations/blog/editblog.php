@@ -25,9 +25,9 @@ $blog = mysqli_fetch_assoc($blogs);
                 <?= $blog['title'] ?>'
             </h1>
             <div class="input-and-save">
-                <input type="text" value="<?= $blog['title'] ?>" ?>/>
+                <input type="text" value="<?= $blog['title'] ?>"/>
                 <input type="submit">
-            </div>
+                        </div>
             <textarea class="editor" placeholder="Write your blog here">
                 <?= $blog['descr'] ?>
             </textarea>

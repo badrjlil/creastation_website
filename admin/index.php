@@ -93,7 +93,7 @@ require_once("../assets/php/connect.php");
     </div>
 
 
-    <div id="dashboard" class="dashboard hide"> <!--TODO: remove hide-->
+    <div id="dashboard" class="dashboard">
       <div class="app-main">
         <div class="main-header-line">
           <h1>Dashboard</h1>
@@ -338,7 +338,7 @@ require_once("../assets/php/connect.php");
       </div>
     </div>
 
-    <div id="portfolio" class="portfolio app-main"> <!--TODO: add 'hide here'-->
+    <div id="portfolio" class="portfolio app-main hide">
       <div class="main-header-line">
         <h1>Portfolio</h1>
       </div>
@@ -374,7 +374,7 @@ require_once("../assets/php/connect.php");
                 <?= $portf['serv_title'] ?>
               </h6>
               <div class="portfolio-buttons">
-                <a href="">
+                <a href="./operations/portfolio/editPortfolio.php?id=<?= $portf['id'] ?>">
                   <i class="ri-file-edit-line"></i>
                 </a>
                 <a href="">

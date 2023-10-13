@@ -16,7 +16,7 @@
             <h1>Add blog
             </h1>
             <div class="input-and-save">
-                <input type="text" value="" ?>/>
+                <input type="text" value="" placeholder="Title here ..." />
                 <input type="submit">
             </div>
             <textarea class="editor" placeholder="Write your blog here">

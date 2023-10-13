@@ -1,3 +1,13 @@
+<?php
+require_once("../../../assets/php/connect.php");
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $query = "select * from portf where id=" . $id;
+    $portfolio = mysqli_query($connect, $query);
+    $result = mysqli_fetch_assoc($portfolio);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,33 +21,33 @@
             height: 100vh;
         }
 
-        form {
-            height: 100%;
+        .editform {
+            height: fit-content !important;
+            width: 600px !important;
         }
 
         .inputs {
             display: flex;
             flex-direction: column;
-            width: 50%;
+            gap: 10px;
+            width: 100%;
         }
 
         .inputs input {
-            margin: 10px 0;
             padding: 10px 20px;
             border-radius: 15px;
+            width: 100% !important;
         }
 
         .inputs select {
-            margin: 10px 0;
             padding: 10px 20px;
-            border-radius: 15px;
+            border-radius: 5px;
         }
 
         .inputs input[type="file"] {
-            margin: 10px 0;
             padding: 10px 20px;
             border-radius: 15px;
-            color: #000;
+            background-color: #c1c1c1;
             color: white;
             border: none;
         }
@@ -47,14 +57,25 @@
 <body>
     <form action="" class="editform" method="post">
         <div class="contentedit">
-            <h1>Edit Portfolio
+            <h1>Edit Portfolio:
+                <?= $result['title'] ?>
             </h1>
             <div class="inputs">
-                <input type="text" value="" placeholder="Title ...">
+                <input type="text" value="<?= $result['title'] ?>" placeholder="Title ...">
                 <select name="serv" id="">
-                    <option value="1">Opt 1</option>
+                    <?php
+                    $SQL = "SELECT * FROM serv";
+                    $services = mysqli_query($connect, $SQL);
+                    while ($service = mysqli_fetch_assoc($services)) {
+                        ?>
+                        <option value="<?= $service['serv_id'] ?>" <?php if ($result['serv'] == $service['serv_id']) { ?>
+                                selected <?php } ?>>
+                            <?= $service['serv_title'] ?>
+                        </option>
+                        <?php
+                    }
+                    ?>
                 </select>
-                <input type="file" value="" placeholder="Title ...">
                 <input type="submit">
             </div>
         </div>

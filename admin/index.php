@@ -93,7 +93,7 @@ require_once("../assets/php/connect.php");
     </div>
 
 
-    <div id="dashboard" class="dashboard hide">
+    <div id="dashboard" class="dashboard hide"> <!--TODO: remove hide-->
       <div class="app-main">
         <div class="main-header-line">
           <h1>Dashboard</h1>
@@ -254,7 +254,7 @@ require_once("../assets/php/connect.php");
       </div>
     </div>
 
-    <div id="blogs" class="blogs app-main">
+    <div id="blogs" class="blogs app-main hide">
       <div class="main-header-line">
         <h1>Blogs</h1>
       </div>
@@ -338,89 +338,55 @@ require_once("../assets/php/connect.php");
       </div>
     </div>
 
-    <div id="portfolio" class="portfolio app-main hide">
+    <div id="portfolio" class="portfolio app-main"> <!--TODO: add 'hide here'-->
       <div class="main-header-line">
         <h1>Portfolio</h1>
       </div>
 
-      <div class="search-box">
-        <i class="ri-search-line"></i>
-        <input type="text" placeholder="Search here">
+      <div class="container">
+        <div class="empty">
+
+        </div>
+        <div class="search-box">
+          <i class="ri-search-line"></i>
+          <input type="text" placeholder="Search here">
+        </div>
+        <div class="addbtn">
+          <a href="./operations/portfolio/addPortfolio.php">Add Portfolio</a>
+        </div>
       </div>
 
       <div class="portfolio-main">
-        <div class="portfolio-container">
-          <img src="../assets/img/card-1.jpeg">
-          <div class="portfolio-title">
-            Creastation - Web Design
-          </div>
-          <div class="portfolio-buttons">
-            <a href="">
-              <i class="ri-file-edit-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-delete-bin-7-line"></i>
-            </a>
-          </div>
-        </div>
+        <?php
+        $SQL = "SELECT p.id, p.title AS title, p.img, s.serv_title AS serv_title FROM portf p, serv s WHERE s.serv_id = p.serv";
+        $portfolio = mysqli_query($connect, $SQL);
+        while ($portf = mysqli_fetch_assoc($portfolio)) {
+          ?>
+          <div class="portfolio-container">
+            <img src=<?php echo "../assets/img/" . $portf['img'] ?>>
+            <div class="portfolio-title">
+              <h5>
+                <?= $portf['title'] ?>
+              </h5>
+            </div>
+            <div class="port_bottom_container">
+              <h6 style="font-weight: 200; margin: auto 0;">
+                <?= $portf['serv_title'] ?>
+              </h6>
+              <div class="portfolio-buttons">
+                <a href="">
+                  <i class="ri-file-edit-line"></i>
+                </a>
+                <a href="">
+                  <i class="ri-delete-bin-7-line"></i>
+                </a>
+              </div>
+            </div>
 
-        <div class="portfolio-container">
-          <img src="../assets/img/card-2.jpg">
-          <div class="portfolio-title">
-            Creastation - Web Design
           </div>
-          <div class="portfolio-buttons">
-            <a href="">
-              <i class="ri-file-edit-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-delete-bin-7-line"></i>
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-container">
-          <img src="../assets/img/card-3.jpg">
-          <div class="portfolio-title">
-            Creastation - Web Design
-          </div>
-          <div class="portfolio-buttons">
-            <a href="">
-              <i class="ri-file-edit-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-delete-bin-7-line"></i>
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-container">
-          <img src="../assets/img/card-4.jpg">
-          <div class="portfolio-title">
-            Creastation - Web Design
-          </div>
-          <div class="portfolio-buttons">
-            <a href="">
-              <i class="ri-file-edit-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-delete-bin-7-line"></i>
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-container">
-          <img src="../assets/img/card-1.jpeg">
-          <div class="portfolio-title">
-            Creastation - Web Design
-          </div>
-          <div class="portfolio-buttons">
-            <a href="">
-              <i class="ri-file-edit-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-delete-bin-7-line"></i>
-            </a>
-          </div>
-        </div>
-
+          <?php
+        }
+        ?>
       </div>
 
     </div>
@@ -431,9 +397,17 @@ require_once("../assets/php/connect.php");
         <h1>Services</h1>
       </div>
 
-      <div class="search-box">
-        <i class="ri-search-line"></i>
-        <input type="text" placeholder="Search here">
+      <div class="container">
+        <div class="empty">
+
+        </div>
+        <div class="search-box">
+          <i class="ri-search-line"></i>
+          <input type="text" placeholder="Search here">
+        </div>
+        <div class="addbtn">
+          <a href="./operations/blog/addblog.php">Add Service</a>
+        </div>
       </div>
 
       <div class="services-main">

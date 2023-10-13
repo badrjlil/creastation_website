@@ -7,7 +7,7 @@
     <script src="https://cdn.tiny.cloud/1/m8uh2vggo1k922qgxpgr6bclh9wwjcjdxt5tb40u3nqlqe5k/tinymce/6/tinymce.min.js"
         referrerpolicy="origin"></script>
     <link rel="stylesheet" href="../../../assets/css/admin.css">
-    <title>Document</title>
+    <title>Add Blog</title>
 </head>
 
 <body>

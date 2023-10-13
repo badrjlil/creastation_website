@@ -698,7 +698,7 @@ button {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  max-width: 950px;
+  max-width: 1200px;
   align-items: center;
   position: relative;
   left: 50%;
@@ -818,6 +818,18 @@ button {
 
 .portfolio-title {
   margin: 20px 10px;
+}
+
+.portfolio-title h1,
+h6 {
+  text-align: start;
+  display: block;
+}
+
+.port_bottom_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .portfolio-buttons a {

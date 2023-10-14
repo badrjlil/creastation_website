@@ -406,62 +406,35 @@ require_once("../assets/php/connect.php");
           <input type="text" placeholder="Search here">
         </div>
         <div class="addbtn">
-          <a href="./operations/blog/addblog.php">Add Service</a>
+          <a href="./operations/services/addservice.php">Add Service</a>
         </div>
       </div>
 
       <div class="services-main">
-        <div class="service">
-          <img class="service-image" src="../assets/img/card-1.jpeg">
-          <div class="service-title">
-            The content of evangelism
+        <?php
+        $queryServ = "SELECT * FROM serv";
+        $servicesRes = mysqli_query($connect, $queryServ);
+        while ($resultServ = mysqli_fetch_assoc($servicesRes)) {
+          ?>
+          <div class="service">
+            <div class="service-title">
+              <?= $resultServ['serv_title'] ?>
+            </div>
+            <div class="service-buttons">
+              <a href="./operations/services/editservice.php?id=<?= $resultServ['serv_id'] ?>">
+                <i class="ri-edit-2-line"></i>
+              </a>
+              <a href="">
+                <i class="ri-archive-line"></i>
+              </a>
+              <a href="">
+                <i class="ri-delete-bin-line"></i>
+              </a>
+            </div>
           </div>
-          <div class="service-buttons">
-            <a href="">
-              <i class="ri-edit-2-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-archive-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-delete-bin-line"></i>
-            </a>
-          </div>
-        </div>
-        <div class="service">
-          <img class="service-image" src="../assets/img/card-2.jpg">
-          <div class="service-title">
-            The content of evangelism
-          </div>
-          <div class="service-buttons">
-            <a href="">
-              <i class="ri-edit-2-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-archive-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-delete-bin-line"></i>
-            </a>
-          </div>
-        </div>
-        <div class="service">
-          <img class="service-image" src="../assets/img/card-3.jpg">
-          <div class="service-title">
-            The content of evangelism
-          </div>
-          <div class="service-buttons">
-            <a href="">
-              <i class="ri-edit-2-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-archive-line"></i>
-            </a>
-            <a href="">
-              <i class="ri-delete-bin-line"></i>
-            </a>
-          </div>
-        </div>
+          <?php
+        }
+        ?>
       </div>
     </div>
 

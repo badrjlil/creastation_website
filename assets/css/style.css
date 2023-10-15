@@ -1,6 +1,9 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
-
+:root {
+  --primary-color: #161e22;
+  --secondary-color: #ff4d00;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -133,6 +136,22 @@ h1 {
   line-height: 2em;
   text-align: center;
   margin: auto;
+}
+
+.about a{
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7em;
+  padding: 15px 25px ;
+  border-radius: 5px;
+  cursor: pointer;
+  background: gray;
+  color: white;
+  transition: 0.6s;
+}
+
+.about a:hover{
+  background: #161e22;
 }
 
 /*=============== PORTFOLIO ===============*/

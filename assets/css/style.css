@@ -628,7 +628,7 @@ svg {
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Creates four equal-width columns */
-  gap: 20px;
+  gap: 50px;
   padding: 0 20%;
 }
 
@@ -637,7 +637,7 @@ svg {
   height: 100%;
   background-color: #0f161a;
   border-radius: 15px;
-  padding: 5px;
+  padding: 15px;
 }
 .blog-container img {
   width: 100%;
